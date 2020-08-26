@@ -15,9 +15,6 @@ public class SearchFacadeBean implements SearchFacade, SearchFacadeLocal {
 
     private final Map<String, String> manufacturersByCountry = new HashMap<>();
 
-    public SearchFacadeBean() {
-    }
-
     @PostConstruct
     public void initializeManufacturersByCountry() {
         manufacturersByCountry.put("Spain", "Seat");
@@ -32,7 +29,7 @@ public class SearchFacadeBean implements SearchFacade, SearchFacadeLocal {
     }
 
     @Override
-    public List transmissionSearch(String manufacturer) {
+    public List<String> transmissionSearch(String manufacturer) {
         List<String> models = new ArrayList<>();
 
         if ("SEAT".equals(manufacturer)) {

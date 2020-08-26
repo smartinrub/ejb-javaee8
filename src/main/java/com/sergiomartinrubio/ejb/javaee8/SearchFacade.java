@@ -6,5 +6,5 @@ import javax.ejb.Remote;
 @Remote
 public interface SearchFacade {
 
-    List transmissionSearch(String transmissionType);
+    List<String> transmissionSearch(String transmissionType);
 }

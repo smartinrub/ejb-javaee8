@@ -6,5 +6,5 @@ import javax.ejb.Local;
 @Local
 public interface SearchFacadeLocal {
 
-    List transmissionSearch(String transmissionType);
+    List<String> transmissionSearch(String transmissionType);
 }
