@@ -6,16 +6,22 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="ejb-javaee8" />
+        <module name="ejb-client" />
+        <module name="ejb-beans" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="ejb-javaee8" target="1.8" />
+      <module name="ejb-beans" target="1.8" />
+      <module name="ejb-client" target="1.8" />
+      <module name="ejb-client (1) (com.sergiomartinrubio.javaee8)" target="1.8" />
+      <module name="ejb-javaee8" target="1.5" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="ejb-javaee8" options="-endorseddirs $PROJECT_DIR$/target/endorsed" />
+      <module name="ejb-beans" options="" />
+      <module name="ejb-client" options="" />
+      <module name="ejb-javaee8" options="" />
     </option>
   </component>
 </project>

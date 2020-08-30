@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/ejb-beans/ejb-beans.iml" filepath="$PROJECT_DIR$/ejb-beans/ejb-beans.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ejb-client/ejb-client.iml" filepath="$PROJECT_DIR$/ejb-client/ejb-client.iml" />
       <module fileurl="file://$PROJECT_DIR$/ejb-javaee8.iml" filepath="$PROJECT_DIR$/ejb-javaee8.iml" />
     </modules>
   </component>
