@@ -55,3 +55,29 @@ http://localhost:8080/ejb-client/order
 http://localhost:8080/ejb-client/count
 ```
    
+### Deployment on WildFly
+
+1. Install WildFly (MacOS):
+
+    ```
+    brew install wildfly-as
+    ```
+   
+   Add to `.bash_profile` or `.zshrc`:
+   
+    ```
+    export JBOSS_HOME=/usr/local/opt/wildfly-as/libexec
+    export PATH=${PATH}:${JBOSS_HOME}/bin
+    ```
+   
+2. Start Glassfish:
+
+    ```
+    brew services start wildfly-as
+    ```
+
+3. Go to `localhost:9990`
+4. Build project and deploy beans and client. 
+>Remember, WildFly 20 is not compatible with business interface dependency injection, 
+>you have to use JNDI lookup instead.
+   
