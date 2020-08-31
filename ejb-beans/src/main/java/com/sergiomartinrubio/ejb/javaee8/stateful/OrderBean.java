@@ -2,29 +2,28 @@ package com.sergiomartinrubio.ejb.javaee8.stateful;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
-import javax.ejb.*;
-import javax.persistence.PrePersist;
+import javax.ejb.Remove;
+import javax.ejb.Stateful;
 import java.util.ArrayList;
 import java.util.List;
 
 @Stateful
-@Local(OrderLocal.class)
 public class OrderBean implements Order, OrderLocal {
 
     public List<String> orderItems;
 
     @PostConstruct
-    public void initialize() {
+    public void postConstruct() {
         orderItems = new ArrayList<>();
     }
 
     @PreDestroy
-    public void exit() {
+    public void preDestroy() {
         System.out.println("Saved items into database");
     }
 
     @Remove
-    public void stopSession() {
+    public void remove() {
         System.out.println("From stopSession method with @Remove annotation");
     }
 

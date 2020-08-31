@@ -8,5 +8,5 @@ public interface SearchCountLocal {
 
     int getSearchCount();
 
-    void resetCounter();
+    void resetCount();
 }

@@ -11,12 +11,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
-import java.util.logging.Logger;
 
 @WebServlet(urlPatterns = "/search")
-public class SearchProductClient extends HttpServlet {
-
-    private static final Logger LOGGER = Logger.getLogger(SearchProductClient.class.getName());
+public class ProductSearchClient extends HttpServlet {
 
     //@EJB(lookup = "java:global/ejb-beans-1.3/SearchFacade!com.sergiomartinrubio.ejb.javaee8.stateless.SearchFacade")
     @EJB
@@ -26,17 +23,13 @@ public class SearchProductClient extends HttpServlet {
     private SearchCount searchCount;
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        response.setContentType("text/html;charset=UTF-8");
-
         try (PrintWriter out = response.getWriter()) {
             List<String> products = productSearch.search("diary");
-            out.println("<ul>");
             for (String product : products) {
-                out.println("<li>" + product + "</li>");
+                out.println(product);
             }
-            out.println("</ul>");
             searchCount.incrementSearchCount();
-            out.println("<p>" + searchCount.getSearchCount() + "</p>");
+            out.println(searchCount.getSearchCount());
         }
     }
 

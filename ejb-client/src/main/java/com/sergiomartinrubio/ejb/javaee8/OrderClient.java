@@ -21,16 +21,12 @@ public class OrderClient extends HttpServlet {
     private Order order;
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        response.setContentType("text/html:charset=UTF-8");
-
         try (PrintWriter out = response.getWriter()) {
             order.addItem("milk");
             List<String> items = order.getItems();
-            out.println("<ul>");
             for (String item : items) {
-                out.println("<li>" + item + "</li>");
+                out.println(item);
             }
-            out.println("</ul>");
         }
     }
 

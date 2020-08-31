@@ -17,13 +17,11 @@ public class OrdersCountClient extends HttpServlet {
     private SearchCount searchCount;
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        response.setContentType("text/html:charset=UTF-8");
-
         try (PrintWriter out = response.getWriter()) {
-
-            searchCount.resetCounter();
-            searchCount.incrementSearchCount();
-            out.println("<p>Orders Count:" + searchCount.getSearchCount() + "</p>");
+            out.println("Search Count is:" + searchCount.getSearchCount());
+            out.println("Reset search count...");
+            searchCount.resetCount();
+            out.println("Search Count is now:" + searchCount.getSearchCount());
         }
     }
 

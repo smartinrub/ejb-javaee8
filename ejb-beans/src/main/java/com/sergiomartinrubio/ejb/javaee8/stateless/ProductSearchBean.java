@@ -13,14 +13,14 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 @Stateless
-public class ProductBean implements ProductSearch, ProductSearchLocal {
+public class ProductSearchBean implements ProductSearch, ProductSearchLocal {
 
-    private static final Logger LOGGER = Logger.getLogger(ProductBean.class.getName());
+    private static final Logger LOGGER = Logger.getLogger(ProductSearchBean.class.getName());
 
     private final Map<String, String> productsByCountry = new HashMap<>();
 
     @PostConstruct
-    public void initializeDishesByCourse() {
+    public void postConstruct() {
         productsByCountry.put("milk", "United Kingdom");
         productsByCountry.put("yogurt", "United Kingdom");
         productsByCountry.put("cheese", "The Netherlands");
@@ -32,31 +32,31 @@ public class ProductBean implements ProductSearch, ProductSearchLocal {
     }
 
     @PreDestroy
-    public void destroyProductsByCountry() {
+    public void preDestroy() {
         productsByCountry.clear();
     }
 
     @Override
     public List<String> search(String type) {
-        List<String> dishes = new ArrayList<>();
+        List<String> products = new ArrayList<>();
 
         if ("diary".equals(type)) {
-            dishes.add("milk");
-            dishes.add("yogurt");
-            dishes.add("cheese");
-            dishes.add("eggs");
+            products.add("milk");
+            products.add("yogurt");
+            products.add("cheese");
+            products.add("eggs");
         } else if ("vegetables".equals(type)) {
-            dishes.add("broccoli");
-            dishes.add("tomatoes");
-            dishes.add("onion");
-            dishes.add("garlic");
+            products.add("broccoli");
+            products.add("tomatoes");
+            products.add("onion");
+            products.add("garlic");
         }
 
-        return dishes;
+        return products;
     }
 
     @AroundInvoke
-    public Object logMethodExecution(InvocationContext ctx) throws Exception {
+    public Object logMethodInvocationTime(InvocationContext ctx) throws Exception {
         long startTime = System.currentTimeMillis();
         LOGGER.log(Level.INFO, "Running method " + ctx.getMethod());
 
