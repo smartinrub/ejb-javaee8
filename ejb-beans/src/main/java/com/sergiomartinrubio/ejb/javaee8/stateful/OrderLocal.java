@@ -7,7 +7,10 @@ import java.util.List;
 @Local
 public interface OrderLocal {
     void addItem(String item);
+
     void removeItem(String item);
+
     void setItems(ArrayList<String> items);
+
     List<String> getItems();
 }

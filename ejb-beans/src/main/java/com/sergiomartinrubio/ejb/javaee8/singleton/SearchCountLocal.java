@@ -4,7 +4,6 @@ import javax.ejb.Local;
 
 @Local
 public interface SearchCountLocal {
-
     void incrementSearchCount();
 
     int getSearchCount();

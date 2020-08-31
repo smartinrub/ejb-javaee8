@@ -6,7 +6,6 @@ import java.util.List;
 
 @Remote
 public interface Order {
-
     void addItem(String item);
 
     void removeItem(String item);
