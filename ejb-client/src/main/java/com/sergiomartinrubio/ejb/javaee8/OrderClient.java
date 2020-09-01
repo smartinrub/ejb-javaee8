@@ -1,6 +1,6 @@
 package com.sergiomartinrubio.ejb.javaee8;
 
-import com.sergiomartinrubio.ejb.javaee8.stateful.Order;
+import com.sergiomartinrubio.ejb.javaee8.bean.stateful.Order;
 
 import javax.ejb.EJB;
 import javax.servlet.annotation.WebServlet;

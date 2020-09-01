@@ -1,7 +1,7 @@
 package com.sergiomartinrubio.ejb.javaee8;
 
-import com.sergiomartinrubio.ejb.javaee8.singleton.SearchCount;
-import com.sergiomartinrubio.ejb.javaee8.stateless.ProductSearch;
+import com.sergiomartinrubio.ejb.javaee8.bean.singleton.SearchCount;
+import com.sergiomartinrubio.ejb.javaee8.bean.stateless.ProductSearch;
 
 import javax.ejb.EJB;
 import javax.servlet.annotation.WebServlet;

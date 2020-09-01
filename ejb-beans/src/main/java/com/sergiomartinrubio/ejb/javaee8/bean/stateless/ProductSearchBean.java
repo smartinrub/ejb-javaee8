@@ -1,4 +1,4 @@
-package com.sergiomartinrubio.ejb.javaee8.stateless;
+package com.sergiomartinrubio.ejb.javaee8.bean.stateless;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;

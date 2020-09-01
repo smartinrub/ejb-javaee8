@@ -1,11 +1,11 @@
-package com.sergiomartinrubio.ejb.javaee8.stateful;
+package com.sergiomartinrubio.ejb.javaee8.bean.stateful;
 
-import javax.ejb.Remote;
+import javax.ejb.Local;
 import java.util.ArrayList;
 import java.util.List;
 
-@Remote
-public interface Order {
+@Local
+public interface OrderLocal {
     void addItem(String item);
 
     void removeItem(String item);

@@ -51,7 +51,7 @@ Both, EJBs and client, can be deployed in a web server like Glassfish or WildFly
 7. Access API:
 ```
 http://localhost:8080/ejb-client/search
-http://localhost:8080/ejb-client/order
+http://localhost:8080/ejb-client/product
 http://localhost:8080/ejb-client/count
 ```
    

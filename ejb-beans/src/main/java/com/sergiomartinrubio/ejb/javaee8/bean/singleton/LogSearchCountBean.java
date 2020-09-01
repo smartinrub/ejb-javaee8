@@ -1,4 +1,4 @@
-package com.sergiomartinrubio.ejb.javaee8.singleton;
+package com.sergiomartinrubio.ejb.javaee8.bean.singleton;
 
 import javax.ejb.*;
 import java.util.logging.Level;
