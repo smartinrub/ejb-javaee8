@@ -1,6 +1,6 @@
-package com.sergiomartinrubio.ejb.javaee8;
+package com.sergiomartinrubio.ejb.javaee8.ejb.client;
 
-import com.sergiomartinrubio.ejb.javaee8.bean.singleton.SearchCount;
+import com.sergiomartinrubio.ejb.javaee8.bean.singleton.SingletonRemote;
 
 import javax.ejb.EJB;
 import javax.servlet.annotation.WebServlet;
@@ -10,18 +10,15 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet(urlPatterns = "/count")
-public class OrdersCountClient extends HttpServlet {
+@WebServlet(urlPatterns = "/singleton")
+public class SingletonBeanClient extends HttpServlet {
 
     @EJB
-    private SearchCount searchCount;
+    private SingletonRemote singletonBean;
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws IOException {
         try (PrintWriter out = response.getWriter()) {
-            out.println("Search Count is:" + searchCount.getSearchCount());
-            out.println("Reset search count...");
-            searchCount.resetCount();
-            out.println("Search Count is now:" + searchCount.getSearchCount());
+            out.println("Counter is:" + singletonBean.getCounter());
         }
     }
 
@@ -37,6 +34,6 @@ public class OrdersCountClient extends HttpServlet {
 
     @Override
     public String getServletInfo() {
-        return "Orders count servlet";
+        return "Singleton Bean servlet";
     }
 }
