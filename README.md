@@ -13,21 +13,21 @@ Both, EJBs and client, can be deployed in a web server like Glassfish or WildFly
 
 ### Deployment on Glassfish
 
-1. Install Glassfish (MacOS):
+1. Install Payara (MacOS):
 
     ```
-    brew install glassfish
+    brew install payara
     ```
 
 2. Start Glassfish:
 
     ```
-    cd $GLASSFISH_HOME/glassfish/bin
-    ./asadmin start-domain --verbose
+    asadmin start-domain --verbose domain
     ```
    
-    >You can stop the server with `./asadmin stop-domain`
-3. Go to Glassfish administration console at `localhost:8080`. The first time it will ask you to set a password for the admin user.                                                                                                             
+   >To use Payara server with MySQL you will have to download [Connector/J 5.1.49](https://dev.mysql.com/downloads/connector/j/5.1.html) and place it in `/usr/local/Cellar/payara/5.192/libexec/glassfish/lib`
+   
+3. Go to Payara administration console at `localhost:8080`. The first time it will ask you to set a password for the admin user.                                                                                                             
 4. Build EJB beans and client application:
 
     ```
@@ -51,7 +51,7 @@ Both, EJBs and client, can be deployed in a web server like Glassfish or WildFly
 7. Access API:
 ```
 http://localhost:8080/ejb-client/search
-http://localhost:8080/ejb-client/product
+http://localhost:8080/ejb-client/fooChild
 http://localhost:8080/ejb-client/count
 ```
    
