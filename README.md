@@ -68,7 +68,7 @@ http://localhost:8080/ejb-client/stateful
     export PATH=${PATH}:${JBOSS_HOME}/bin
     ```
    
-2. Start Glassfish:
+2. Start WildFly:
 
     ```
     brew services start wildfly-as
