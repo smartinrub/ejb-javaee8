@@ -24,9 +24,7 @@ Both, EJBs and client, can be deployed in a web server like Glassfish, Payara or
     ```
     asadmin start-domain --verbose domain
     ```
-   
-   >To use Payara server with MySQL you will have to download [Connector/J 5.1.49](https://dev.mysql.com/downloads/connector/j/5.1.html) and place it in `/usr/local/Cellar/payara/5.192/libexec/glassfish/lib`
-   
+      
 3. Go to Payara administration console at `localhost:8080`. The first time it will ask you to set a password for the admin user.                                                                                                             
 4. Build EJB beans and client application:
 
