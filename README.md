@@ -9,9 +9,9 @@ This is a project to show how to use Enterprise Java Beans (EJBs) from Java EE.
 
 ## Getting Started
 
-Both, EJBs and client, can be deployed in a web server like Glassfish or WildFly.
+Both, EJBs and client, can be deployed in a web server like Glassfish, Payara or WildFly.
 
-### Deployment on Glassfish
+### Deployment on Payara
 
 1. Install Payara (MacOS):
 
@@ -19,7 +19,7 @@ Both, EJBs and client, can be deployed in a web server like Glassfish or WildFly
     brew install payara
     ```
 
-2. Start Glassfish:
+2. Start Payara:
 
     ```
     asadmin start-domain --verbose domain
