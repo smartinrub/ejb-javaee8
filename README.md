@@ -48,9 +48,9 @@ Both, EJBs and client, can be deployed in a web server like Glassfish, Payara or
 6. Go to the `ejb-client` configuration and change the context root to `/ejb-client`.
 7. Access API:
 ```
-http://localhost:8080/ejb-client/search
-http://localhost:8080/ejb-client/fooChild
-http://localhost:8080/ejb-client/count
+http://localhost:8080/ejb-client/singleton
+http://localhost:8080/ejb-client/stateless
+http://localhost:8080/ejb-client/stateful
 ```
    
 ### Deployment on WildFly
